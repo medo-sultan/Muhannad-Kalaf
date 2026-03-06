@@ -33,7 +33,7 @@ export default function Products() {
   return (
     <section className="min-h-screen bg-gray-50">
       {/* Header Section */}
-      <div className="relative py-24 bg-gradient-to-r from-[#D4AF37] via-[#FFD700] to-[#C9A227] ">
+      <div className="relative py-24 bg-gradient-to-r from-[#78d4373c] via-[#FFD700] to-[#C9A227] ">
         <div className="container mx-auto px-4 text-center">
           <h1
             className="text-4xl md:text-6xl font-bold tracking-wide 
