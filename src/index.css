@@ -1,0 +1,88 @@
+@import "tailwindcss";
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading);
+  font-family: "Poppins", system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text);
+}
+
+b,
+strong {
+  color: var(--heading);
+  font-weight: 600;
+}
+body {
+  @apply bg-[var(--bg)] text-[var(--text)];
+}
+
+@layer utilities {
+  .container {
+    @apply px-4 mx-auto 
+      sm:max-w-[540px] 
+      md:max-w-[720px] 
+      lg:max-w-[960px] 
+      xl:max-w-[1130px] 
+      2xl:max-w-[1340px];
+  }
+
+  .section {
+    @apply pt-10 md:pt-[100px] lg:pt-[140px];
+  }
+
+  p {
+    @apply text-sm sm:text-base md:text-lg leading-relaxed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold leading-tight tracking-tight text-balance;
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl;
+  }
+  h2 {
+    @apply text-3xl sm:text-4xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
+  .border-soft {
+    border-color: var(--border);
+  }
+
+  button {
+    @apply cursor-pointer select-none;
+  }
+}
+
+/* =========================
+   COMPONENTS
+========================= */
+@layer components {
+  .primary-btn {
+    @apply px-2 py-2 rounded-lg border border-[var(--border)]
+      bg-[var(--bg)] hover:bg-[var(--btn-hover)]
+      transition-all duration-300 hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .secondary-btn {
+    @apply px-6 py-3 rounded-lg text-white bg-indigo-600
+      hover:bg-indigo-600/85 transition-all duration-300
+      hover:shadow-lg hover:shadow-indigo-500/30;
+  }
+}

@@ -1,0 +1,414 @@
+/* ========== Tokens خفيفة ========== */
+:root {
+  --gap: 16px;
+  --r: 10px;
+  --line: #e6eaf1;
+  --shadow: 0 6px 20px rgba(16, 24, 40, 0.1);
+  --bg: #f7f7f8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ========== الحاوية والشبكة ========== */
+.fx-catalog {
+  max-width: 1650px;
+  margin: 24px auto;
+  padding: 0 16px;
+  color: #111;
+  font-family:
+    "Cairo",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    "Noto Kufi Arabic",
+    sans-serif;
+  background: var(--bg);
+}
+
+/* ========== Main Slider ========== */
+.fx-main-slider {
+  margin-bottom: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.fx-hero-swiper {
+  width: 100%;
+  height: 400px;
+}
+
+@media (max-width: 768px) {
+  .fx-hero-swiper {
+    height: 250px;
+  }
+}
+
+.fx-slide-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.fx-slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fx-slide-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+  padding: 20px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.fx-slide-overlay span {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Swiper Navigation Styles */
+.fx-hero-swiper .swiper-button-next,
+.fx-hero-swiper .swiper-button-prev {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.fx-hero-swiper .swiper-button-next:after,
+.fx-hero-swiper .swiper-button-prev:after {
+  font-size: 20px;
+}
+
+.fx-hero-swiper .swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.7;
+}
+
+.fx-hero-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #fff;
+}
+
+/* ========== Grid ========== */
+.fx-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+@media (max-width: 1100px) {
+  .fx-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .fx-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .fx-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== البطاقة ========== */
+.fx-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.fx-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: #f5f5f5;
+  isolation: isolate;
+}
+
+.fx-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+/* الرئيسية والبديلة */
+.fx-img--main {
+  opacity: 1;
+  transform: scale(1.02);
+}
+.fx-img--hover {
+  opacity: 0;
+  transform: scale(1.02);
+}
+
+.fx-card:hover .fx-img--main {
+  opacity: 0;
+}
+.fx-card:hover .fx-img--hover {
+  opacity: 1;
+}
+
+/* لو عايز لمسة تكبير خفيفة */
+.fx-card:hover .fx-img {
+  transform: scale(1.06);
+}
+
+/* ========== زر/أيقونة عائمة اختيارية (↗) ========== */
+/* أضف داخل الـ Link عنصر: <span class="fx-float" aria-hidden="true">↗</span> */
+.fx-float {
+  position: absolute;
+  inset-block-end: 10px; /* أسفل */
+  inset-inline-end: 10px; /* يمين مع RTL/ـيسار إنجليزي تلقائيًا */
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-weight: 800;
+  transform: translateY(6px);
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+.fx-media:hover .fx-float {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fx-float:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+
+/* ========== Modal Styles ========== */
+.fx-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fx-modal-content {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fx-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.fx-modal-close:hover {
+  background: #fff;
+}
+
+.fx-modal-main {
+  width: 100%;
+  height: 500px;
+}
+
+@media (max-width: 768px) {
+  .fx-modal-main {
+    height: 300px;
+  }
+}
+
+.fx-modal-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.fx-modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+.fx-modal-swiper .swiper-button-next,
+.fx-modal-swiper .swiper-button-prev {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.fx-modal-swiper .swiper-button-next:after,
+.fx-modal-swiper .swiper-button-prev:after {
+  font-size: 16px;
+}
+
+.fx-modal-swiper .swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.7;
+}
+
+.fx-modal-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #fff;
+}
+
+/* ========== Thumbnails ========== */
+.fx-modal-thumbnails {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  overflow-x: auto;
+  justify-content: center;
+  background: #f5f5f5;
+}
+
+.fx-thumbnail {
+  width: 70px;
+  height: 70px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+  flex-shrink: 0;
+}
+
+.fx-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.fx-thumbnail.active {
+  border-color: #25d366;
+}
+
+.fx-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========== WhatsApp Button ========== */
+.fx-whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: calc(100% - 30px);
+  margin: 15px auto;
+  padding: 15px 30px;
+  background: #25d366;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.fx-whatsapp-btn:hover {
+  background: #128c7e;
+  transform: translateY(-2px);
+}
+
+.fx-whatsapp-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ========== Modal Header ========== */
+.fx-modal-header {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.fx-modal-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.fx-modal-price {
+  font-size: 20px;
+  font-weight: 600;
+  color: #25d366;
+}
