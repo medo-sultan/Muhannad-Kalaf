@@ -4,12 +4,14 @@ import {
   FiMenu,
   FiX,
   FiFacebook,
-  FiTwitter,
-  FiInstagram,
-  FiLinkedin,
-  FiGithub,
-  FiMail,
+
+  // FiTwitter,
+  // FiInstagram,
+  // FiLinkedin,
+  // FiGithub,
+  // FiMail,
 } from "react-icons/fi";
+import { RiWhatsappLine } from "react-icons/ri";
 
 export default function Navbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,20 +20,28 @@ export default function Navbar() {
   const closeSidebar = () => setIsSidebarOpen(false);
 
   const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/products", label: "Products" },
-    { to: "/about", label: "About" },
-    { to: "/services", label: "Services" },
-    { to: "/contact", label: "Contact" },
+    { to: "/", label: "الرئيسيه" },
+    // { to: "/products", label: "Products" },
+    { to: "/about", label: "خدماتنا" },
+    // { to: "/services", label: "خدماتنا" },
+    { to: "/contact", label: "مواقعنا" },
   ];
 
   const socialLinks = [
-    { icon: FiFacebook, href: "https://facebook.com", label: "Facebook" },
-    { icon: FiTwitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: FiInstagram, href: "https://instagram.com", label: "Instagram" },
-    { icon: FiLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: FiGithub, href: "https://github.com", label: "GitHub" },
-    { icon: FiMail, href: "mailto:example@email.com", label: "Email" },
+    {
+      icon: FiFacebook,
+      href: "https://www.facebook.com/YourUsername",
+      label: "Facebook",
+    },
+    {
+      icon: RiWhatsappLine,
+      href: "https://wa.me/201234567890",
+      label: "WhatsApp",
+    }, // 20 = كود مصر
+    // { icon: FiInstagram, href: "https://instagram.com", label: "Instagram" },
+    // { icon: FiLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
+    // { icon: FiGithub, href: "https://github.com", label: "GitHub" },
+    // { icon: FiMail, href: "mailto:example@email.com", label: "Email" },
   ];
 
   return (
