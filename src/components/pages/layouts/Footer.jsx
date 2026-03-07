@@ -107,7 +107,7 @@ export default function Footer() {
             <Link to="/" className="inline-flex items-center gap-3 mb-6">
               <div className="w-14 h-14 rounded-2xl overflow-hidden ring-2 ring-blue-500 shadow-lg shadow-blue-500/30">
                 <img
-                  src="/1 (16).jpeg"
+                  src="/logo.jpeg"
                   alt="Logo"
                   className="w-full h-full object-cover"
                 />

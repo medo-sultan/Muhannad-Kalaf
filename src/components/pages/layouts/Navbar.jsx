@@ -86,7 +86,7 @@ export default function Navbar() {
                 }`}
               >
                 <img
-                  src="/1 (16).jpeg"
+                  src="/logo.jpeg"
                   alt="Logo"
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
