@@ -70,7 +70,7 @@ export default function Footer() {
   ];
 
   const features = [
-    { icon: FaShippingFast, title: "شحن مجاني", desc: " للطلبات فوق 500 ج.س" },
+    { icon: FaShippingFast, title: "توصيل سريع", desc: " للطلبات " },
     { icon: FaExchangeAlt, title: "استبدال سهل", desc: "خلال 14 يوم" },
     { icon: FaShieldAlt, title: "دفع آمن", desc: "100% آمن" },
     { icon: FaHeadset, title: "دعم 24/7", desc: "خدمة عملاء" },
@@ -273,7 +273,7 @@ export default function Footer() {
             {/* Copyright */}
             <p className="text-sm text-gray-500">
               © {currentYear}{" "}
-              <span className="text-white font-semibold">حلمي</span>. جميع
+              <span className="text-white font-semibold">مهند كلف</span>. جميع
               الحقوق محفوظة.
             </p>
 
@@ -281,7 +281,7 @@ export default function Footer() {
             <div className="flex items-center gap-4">
               <span className="text-sm text-gray-500">طرق الدفع:</span>
               <div className="flex gap-2">
-                {["Visa", "MasterCard", "Amex", "PayPal"].map((method) => (
+                {["فودفون", "بنكك", "كاش"].map((method) => (
                   <span
                     key={method}
                     className="px-3 py-1.5 bg-gray-800 rounded-lg text-xs text-gray-400 font-medium"

@@ -257,7 +257,7 @@ export default function Navbar() {
           >
             <div className="w-12 h-12 rounded-xl overflow-hidden ring-2 ring-blue-500">
               <img
-                src="/1 (16).jpeg"
+                src="logo.jpeg"
                 alt="Logo"
                 className="w-full h-full object-cover"
               />
